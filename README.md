@@ -1,1 +1,2 @@
 # jenkins-build
+Unintyで作成したアプリのビルドをJenkinsで自動化するためのスクリプトとか
