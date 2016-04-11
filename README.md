@@ -1,5 +1,4 @@
-# jenkins-build
-Unintyで作成したアプリのビルドをJenkinsで自動化するためのスクリプトとか
+Unintyで作成したアプリのビルドをJenkinsで自動化するためのスクリプト
 
 
 ##Unity3dBuilder Pluginを使う
@@ -73,5 +72,5 @@ public class MyBuilder : MonoBehaviour {
 おわり。
 
 #参考
-[UnityのビルドをJenkins氏に任せて楽したい。 - ともち屋](http://tomocha.hatenablog.com/entry/2013/07/23/001305)
+[UnityのビルドをJenkins氏に任せて楽したい。 - ともち屋](http://tomocha.hatenablog.com/entry/2013/07/23/001305)  
 [Jenkinsを使ったUnityのバッチビルド | TRIDENT Mobile &amp; Network Lab. Blog](http://www.trident-game.com/blog/2013/06/05/jenkins%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9Funity%E3%81%AE%E3%83%90%E3%83%83%E3%83%81%E3%83%93%E3%83%AB%E3%83%89/)
