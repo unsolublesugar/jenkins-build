@@ -19,7 +19,7 @@ Unityをバッチモードで起動してビルドするまでの設定を簡略
 1. UnityプロジェクトのAssetsフォルダ配下に「Editor」フォルダを作成
 2. ビルド用のスクリプトを配置
 
-```Editor/MyBuilder.cs
+```c:Editor/MyBuilder.cs
 // ビルド実行でAndroidのapkを作成する例
 
 using UnityEngine;
