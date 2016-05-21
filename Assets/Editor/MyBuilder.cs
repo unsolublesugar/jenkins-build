@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
 
-public class MyBuilder : MonoBehaviour {
+public class MyBuilder {
 	[UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
 	public static void BuildProjectAllSceneAndroid() {
 		EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.Android );
-		string[] allScene = new string[EditorBuildSettings.scenes.Length];
-		int i = 0;
+		List<string> allScene = new List<string>();
 		foreach( EditorBuildSettingsScene scene in EditorBuildSettings.scenes ){
-			allScene[i] = scene.path;
-			i++;
+			if (scene.enabled) {
+				allScene.Add (scene.path);
+			}
 		}
 		PlayerSettings.bundleIdentifier = "com.yourcompany.newgame";
-		PlayerSettings.statusBarHidden = true;
-		BuildPipeline.BuildPlayer( allScene,
-			"newgame.apk",
-			BuildTarget.Android,
-			BuildOptions.None
-		);
+        	PlayerSettings.statusBarHidden = true;
+        	BuildPipeline.BuildPlayer( 
+            		allScene.ToArray(),
+            		"newgame.apk",
+            		BuildTarget.Android,
+            		BuildOptions.None
+        	);
 	}
 }
