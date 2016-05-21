@@ -17,39 +17,7 @@ Unityをバッチモードで起動してビルドするまでの設定を簡略
 
 ### ビルド用のスクリプトを用意
 1. UnityプロジェクトのAssetsフォルダ配下に「Editor」フォルダを作成
-2. ビルド用のスクリプトを配置
-
-```c
-// MyBuilder.cs
-// ビルド実行でAndroidのapkを作成する例
-
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-
-public class MyBuilder {
-    [UnityEditor.MenuItem("Tools/Build Project AllScene Android")]
-    public static void BuildProjectAllSceneAndroid() {
-        EditorUserBuildSettings.SwitchActiveBuildTarget( BuildTarget.Android );
-        List<string> allScene = new List<string>();
-        foreach( EditorBuildSettingsScene scene in EditorBuildSettings.scenes ){
-            if (scene.enabled) {
-                allScene.Add (scene.path);
-            }
-        }   
-        PlayerSettings.bundleIdentifier = "com.yourcompany.newgame";
-        PlayerSettings.statusBarHidden = true;
-        BuildPipeline.BuildPlayer( 
-            (string[]) allScene.ToArray(),
-            "newgame.apk",
-            BuildTarget.Android,
-            BuildOptions.None
-        );
-    }
-}
-```
-
+2. ビルド用のスクリプト「MyBuilder.cs」を配置
 
 
 ### ジョブの設定
@@ -59,8 +27,13 @@ public class MyBuilder {
 2. 「Unity3d installation name」にシステム設定で指定したUnityの名前を選択
 3.  「Editor command line arguments」にUnityをバッチモードで起動するコマンドを指定
 
-```   
+#####Androidの場合  
+```
 -quit -batchmode -executeMethod MyBuilder.BuildProjectAllSceneAndroid
+```
+#####iOSの場合  
+```
+-quit -batchmode -executeMethod MyBuilder.BuildProjectAllSceneiOS
 ```
 
 #### ビルド後の処理
