@@ -1,9 +1,9 @@
-#jenkins-build
+# jenkins-build
 Unintyで作成したアプリのビルドをJenkinsで自動化するためのスクリプト
 
-##Unity3dBuilder Pluginを使う
+## Unity3dBuilder Pluginを使う
 Unityをバッチモードで起動してビルドするまでの設定を簡略化してくれるプラグイン『[Unity3dBuilder Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Unity3dBuilder+Plugin)』を使う。
-###Jenkinsにプラグインをインストール
+### Jenkinsにプラグインをインストール
 [Jenkinsの管理] - [プラグインの管理] - [利用可能] から「Unity3dBuilder Plugin」をインストールしてJenkinsを再起動
 
 ### プラグインの設定
@@ -27,11 +27,11 @@ Unityをバッチモードで起動してビルドするまでの設定を簡略
 2. 「Unity3d installation name」にシステム設定で指定したUnityの名前を選択
 3.  「Editor command line arguments」にUnityをバッチモードで起動するコマンドを指定
 
-#####Androidの場合  
+##### Androidの場合  
 ```
 -quit -batchmode -executeMethod MyBuilder.BuildProjectAllSceneAndroid
 ```
-#####iOSの場合  
+##### iOSの場合  
 ```
 -quit -batchmode -executeMethod MyBuilder.BuildProjectAllSceneiOS
 ```
@@ -46,6 +46,6 @@ Unityをバッチモードで起動してビルドするまでの設定を簡略
 3. エミュレータや実機にインストールするなどして動作確認する
 
 
-#参考
+# 参考
 [UnityのビルドをJenkins氏に任せて楽したい。 - ともち屋](http://tomocha.hatenablog.com/entry/2013/07/23/001305)  
 [Jenkinsを使ったUnityのバッチビルド | TRIDENT Mobile &amp; Network Lab. Blog](http://www.trident-game.com/blog/2013/06/05/jenkins%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9Funity%E3%81%AE%E3%83%90%E3%83%83%E3%83%81%E3%83%93%E3%83%AB%E3%83%89/)
